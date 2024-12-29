@@ -4,8 +4,7 @@ module "eks" {
   cluster_name    = local.cluster_name
   cluster_version = var.kubernetes_version
   subnet_ids      = module.vpc.private_subnets
-  create_launch_template = true
-  create = true
+
 
   enable_irsa = true
 
@@ -19,10 +18,12 @@ module "eks" {
     ami_type               = "AL2_x86_64"
     instance_types         = ["t3.medium"]
     vpc_security_group_ids = [aws_security_group.all_worker_mgmt.id]
+   
   }
 
   eks_managed_node_groups = {
-
+  create_launch_template = true
+  create = true
     node_group = {
       min_size     = 2
       max_size     = 6
