@@ -4,6 +4,8 @@ module "eks" {
   cluster_name    = local.cluster_name
   cluster_version = var.kubernetes_version
   subnet_ids      = module.vpc.private_subnets
+  create_launch_template = true
+  create = true
 
   enable_irsa = true
 
