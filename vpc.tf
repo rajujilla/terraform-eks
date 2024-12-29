@@ -10,6 +10,7 @@ locals {
   iam_role_policy_prefix = "static"
   create_iam_role = true
   iam_role_name = "test"
+  launch_template_name = "test"
 }
 resource "random_string" "suffix" {
   length  = 8
