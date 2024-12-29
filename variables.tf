@@ -11,9 +11,5 @@ variable "aws_region" {
   default = "us-west-1"
   description = "aws region"
 }
-variable "iam_role_additional_policies" {
-  description = "Additional policies to be added to the IAM role"
-  type        = map(string)
-  default     = {}
-}
+
 
