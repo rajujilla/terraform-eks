@@ -8,6 +8,7 @@ data "aws_availability_zones" "available" {}
 locals {
   cluster_name = "static-${random_string.suffix.result}"
   iam_role_policy_prefix = "static"
+  create_iam_role = true
 
 }
 resource "random_string" "suffix" {
