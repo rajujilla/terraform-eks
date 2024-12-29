@@ -23,6 +23,7 @@ module "eks" {
 
   eks_managed_node_groups = {
   create_launch_template = true
+  launch_template_use_name_prefix = "test"
   create = true
   iam_role_use_name_prefix = "test"
   iam_role_additional_policies = {}
