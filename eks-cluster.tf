@@ -24,6 +24,7 @@ module "eks" {
   eks_managed_node_groups = {
   create_launch_template = true
   create = true
+  iam_role_use_name_prefix = "test"
   iam_role_additional_policies = {}
     node_group = {
       min_size     = 2
